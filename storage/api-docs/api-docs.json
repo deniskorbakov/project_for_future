@@ -1,0 +1,344 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Doc Api",
+        "version": "1.0"
+    },
+    "paths": {
+        "/api/": {},
+        "/api/v1/notebooks": {
+            "get": {
+                "tags": [
+                    "notebook"
+                ],
+                "summary": "Список записей",
+                "parameters": [
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "description": "вывод следующий страницы",
+                        "required": false,
+                        "schema": {
+                            "type": "integer"
+                        },
+                        "example": 2
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "ok",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "data": {
+                                            "properties": {
+                                                "full_name": {
+                                                    "type": "string",
+                                                    "example": "Mackenzie Goldner DVM"
+                                                },
+                                                "company": {
+                                                    "type": "string",
+                                                    "example": "Walker-Schultz"
+                                                },
+                                                "phone_number": {
+                                                    "type": "string",
+                                                    "example": "1-409-706-4614"
+                                                },
+                                                "email": {
+                                                    "type": "string",
+                                                    "example": "jess.reynolds@hotmail.com"
+                                                },
+                                                "date_of_birth": {
+                                                    "type": "string",
+                                                    "format": "date",
+                                                    "example": "2018-04-16"
+                                                },
+                                                "photo": {
+                                                    "type": "string",
+                                                    "example": "https://via.placeholder.com/640x480.png/008855?text=exercitationem"
+                                                }
+                                            },
+                                            "type": "object"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "notebook"
+                ],
+                "summary": "Создать запись",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "allOf": [
+                                    {
+                                        "properties": {
+                                            "full_name": {
+                                                "type": "string",
+                                                "example": "Mackenzie Goldner DVM"
+                                            },
+                                            "company": {
+                                                "type": "string",
+                                                "example": "Walker-Schultz"
+                                            },
+                                            "phone_number": {
+                                                "type": "string",
+                                                "example": "1-409-706-4614"
+                                            },
+                                            "email": {
+                                                "type": "string",
+                                                "example": "jess.reynolds@hotmail.com"
+                                            },
+                                            "date_of_birth": {
+                                                "type": "string",
+                                                "format": "date",
+                                                "example": "2018-04-16"
+                                            },
+                                            "photo": {
+                                                "type": "string",
+                                                "example": "https://via.placeholder.com/640x480.png/008855?text=exercitationem"
+                                            }
+                                        },
+                                        "type": "object"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "created",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "data": {
+                                            "properties": {
+                                                "full_name": {
+                                                    "type": "string",
+                                                    "example": "Mackenzie Goldner DVM"
+                                                },
+                                                "company": {
+                                                    "type": "string",
+                                                    "example": "Walker-Schultz"
+                                                },
+                                                "phone_number": {
+                                                    "type": "string",
+                                                    "example": "1-409-706-4614"
+                                                },
+                                                "email": {
+                                                    "type": "string",
+                                                    "example": "jess.reynolds@hotmail.com"
+                                                },
+                                                "date_of_birth": {
+                                                    "type": "string",
+                                                    "format": "date",
+                                                    "example": "2018-04-16"
+                                                },
+                                                "photo": {
+                                                    "type": "string",
+                                                    "example": "https://via.placeholder.com/640x480.png/008855?text=exercitationem"
+                                                }
+                                            },
+                                            "type": "object"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/notebooks/{notebook}": {
+            "get": {
+                "tags": [
+                    "notebook"
+                ],
+                "summary": "Получить одну запись",
+                "parameters": [
+                    {
+                        "name": "notebook",
+                        "in": "path",
+                        "description": "Id записи",
+                        "required": true,
+                        "example": 5
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "ok",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "data": {
+                                            "properties": {
+                                                "full_name": {
+                                                    "type": "string",
+                                                    "example": "Mackenzie Goldner DVM"
+                                                },
+                                                "company": {
+                                                    "type": "string",
+                                                    "example": "Walker-Schultz"
+                                                },
+                                                "phone_number": {
+                                                    "type": "string",
+                                                    "example": "1-409-706-4614"
+                                                },
+                                                "email": {
+                                                    "type": "string",
+                                                    "example": "jess.reynolds@hotmail.com"
+                                                },
+                                                "date_of_birth": {
+                                                    "type": "string",
+                                                    "format": "date",
+                                                    "example": "2018-04-16"
+                                                },
+                                                "photo": {
+                                                    "type": "string",
+                                                    "example": "https://via.placeholder.com/640x480.png/008855?text=exercitationem"
+                                                }
+                                            },
+                                            "type": "object"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "notebook"
+                ],
+                "summary": "Обновить запись",
+                "parameters": [
+                    {
+                        "name": "notebook",
+                        "in": "path",
+                        "description": "Id записи",
+                        "required": true,
+                        "example": 5
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "allOf": [
+                                    {
+                                        "properties": {
+                                            "full_name": {
+                                                "type": "string",
+                                                "example": "Mackenzie Goldner DVM"
+                                            },
+                                            "company": {
+                                                "type": "string",
+                                                "example": "Walker-Schultz"
+                                            },
+                                            "phone_number": {
+                                                "type": "string",
+                                                "example": "1-409-706-4614"
+                                            },
+                                            "email": {
+                                                "type": "string",
+                                                "example": "jess.reynolds@hotmail.com"
+                                            },
+                                            "date_of_birth": {
+                                                "type": "string",
+                                                "format": "date",
+                                                "example": "2018-04-16"
+                                            },
+                                            "photo": {
+                                                "type": "string",
+                                                "example": "https://via.placeholder.com/640x480.png/008855?text=exercitationem"
+                                            }
+                                        },
+                                        "type": "object"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "ok",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "data": {
+                                            "properties": {
+                                                "full_name": {
+                                                    "type": "string",
+                                                    "example": "Mackenzie Goldner DVM"
+                                                },
+                                                "company": {
+                                                    "type": "string",
+                                                    "example": "Walker-Schultz"
+                                                },
+                                                "phone_number": {
+                                                    "type": "string",
+                                                    "example": "1-409-706-4614"
+                                                },
+                                                "email": {
+                                                    "type": "string",
+                                                    "example": "jess.reynolds@hotmail.com"
+                                                },
+                                                "date_of_birth": {
+                                                    "type": "string",
+                                                    "format": "date",
+                                                    "example": "2018-04-16"
+                                                },
+                                                "photo": {
+                                                    "type": "string",
+                                                    "example": "https://via.placeholder.com/640x480.png/008855?text=exercitationem"
+                                                }
+                                            },
+                                            "type": "object"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "notebook"
+                ],
+                "summary": "Удаление",
+                "parameters": [
+                    {
+                        "name": "notebook",
+                        "in": "path",
+                        "description": "Id записи",
+                        "required": true,
+                        "example": 3
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "none content"
+                    }
+                }
+            }
+        }
+    }
+}
